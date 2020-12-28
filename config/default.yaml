@@ -1,0 +1,11 @@
+app:
+  name:
+  port: :8080
+  mode: debug
+
+client:
+  configPath:
+  organization:
+  username:
+  channelID:
+  chainCodeID:

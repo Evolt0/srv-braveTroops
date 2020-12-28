@@ -1,0 +1,11 @@
+app:
+  name: srv-braveTroops
+  port: :8080
+  mode: debug
+
+client:
+  configPath: "/Users/parker/Desktop/GoWorkspace/gin-base/config/fabric/config-brave-local.yaml"
+  organization: org2
+  username: Admin
+  channelID: mychannel
+  chainCodeID: mycc
