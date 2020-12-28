@@ -1,4 +1,4 @@
 build:
-	go build -v -o srv-trust
+	go build
 lint:
 	golangci-lint run

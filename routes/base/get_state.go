@@ -3,8 +3,8 @@ package base
 import (
 	"net/http"
 
+	"github.com/Parker-Yang/def-braveTroops/proto"
 	"github.com/Parker-Yang/srv-braveTroops/global"
-	"github.com/Parker-Yang/srv-braveTroops/models"
 	"github.com/Parker-Yang/srv-braveTroops/modules/base"
 	"github.com/gin-gonic/gin"
 )
@@ -12,7 +12,7 @@ import (
 func Get(ctx *gin.Context) {
 	key := ctx.Param("key")
 	controller := base.NewController(global.Conf.Client)
-	State := &models.GetState{
+	State := &proto.GetState{
 		Key: key,
 	}
 	state, err := controller.GetState(State)

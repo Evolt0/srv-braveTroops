@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"log"
 
+	"github.com/Parker-Yang/def-braveTroops/proto"
 	"github.com/Parker-Yang/fabric-sdk-yml/base"
-	"github.com/Parker-Yang/srv-braveTroops/models"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/errors/retry"
 )
@@ -18,7 +18,7 @@ func NewController(baseClient *base.Client) *Controller {
 	return &Controller{baseClient: baseClient}
 }
 
-func (c *Controller) PutState(data models.PutState) (interface{}, error) {
+func (c *Controller) PutState(data *proto.PutState) (interface{}, error) {
 	log.Println(data)
 	marshal, err := json.Marshal(data)
 	if err != nil {
@@ -33,7 +33,7 @@ func (c *Controller) PutState(data models.PutState) (interface{}, error) {
 	return response, nil
 }
 
-func (c *Controller) GetState(data *models.GetState) (interface{}, error) {
+func (c *Controller) GetState(data *proto.GetState) (interface{}, error) {
 	log.Println(data)
 	marshal, err := json.Marshal(data)
 	if err != nil {
