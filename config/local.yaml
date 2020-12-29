@@ -4,7 +4,7 @@ app:
   mode: debug
 
 client:
-  configPath: "/Users/parker/Desktop/GoWorkspace/gin-base/config/fabric/config-brave-local.yaml"
+  configPath: "/Users/parker/Desktop/GoWorkspace/BraveTroops/srv-braveTroops/config/fabric/config-brave-local.yaml"
   organization: org2
   username: Admin
   channelID: mychannel
