@@ -10,4 +10,8 @@ func Routes(root *gin.Engine) {
 		base.PUT("/", Put)
 		base.GET("/:key", Get)
 	}
+	bases := root.Group("/bases")
+	{
+		bases.GET("/history", getHistory)
+	}
 }

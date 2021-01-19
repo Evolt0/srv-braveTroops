@@ -8,11 +8,7 @@ import (
 func Routes(root *gin.Engine) {
 	mining := root.Group("/mining")
 	{
-		mining.POST("/", Post)
+		mining.POST("/pow", PoW)
+		mining.GET("/list", List)
 	}
-}
-
-// 挖矿
-func Post(ctx *gin.Context) {
-
 }

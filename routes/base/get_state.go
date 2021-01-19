@@ -1,11 +1,11 @@
 package base
 
 import (
-	"net/http"
-
+	"github.com/Parker-Yang/def-braveTroops/consts/status"
 	"github.com/Parker-Yang/def-braveTroops/proto"
 	"github.com/Parker-Yang/srv-braveTroops/global"
 	"github.com/Parker-Yang/srv-braveTroops/modules/base"
+	"github.com/Parker-Yang/srv-braveTroops/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,8 +17,8 @@ func Get(ctx *gin.Context) {
 	}
 	state, err := controller.GetState(State)
 	if err != nil {
-		ctx.JSON(http.StatusBadRequest, err)
+		utils.UnWarpFailedResp(ctx, err)
 		return
 	}
-	ctx.JSON(http.StatusOK, state)
+	utils.SuccessResp(ctx, status.Ok, state)
 }

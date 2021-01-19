@@ -31,7 +31,10 @@ func main() {
 	signal.Notify(quit, monitoredSignals...)
 	select {
 	case <-quit:
-		logrus.Println("exit...")
-	default:
+		BeforeExit()
 	}
+}
+
+func BeforeExit() {
+	logrus.Println("exit...")
 }
