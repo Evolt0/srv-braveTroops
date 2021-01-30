@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"github.com/Parker-Yang/def-braveTroops/consts/status"
-	"github.com/Parker-Yang/def-braveTroops/proto/epkg"
+	"github.com/Evolt0/def-braveTroops/consts/status"
+	"github.com/Evolt0/def-braveTroops/proto/epkg"
 	"github.com/gin-gonic/gin"
 )
 

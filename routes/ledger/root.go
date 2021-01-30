@@ -9,5 +9,6 @@ func Routes(root *gin.Engine) {
 	ledger := root.Group("/ledger")
 	{
 		ledger.POST("/transfer", Transfer)
+		ledger.GET("/list", List)
 	}
 }

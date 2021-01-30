@@ -10,5 +10,6 @@ func Routes(root *gin.Engine) {
 	{
 		mining.POST("/pow", PoW)
 		mining.GET("/list", List)
+		mining.GET("/GetTarget", GetTarget)
 	}
 }

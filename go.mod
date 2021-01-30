@@ -1,14 +1,13 @@
-module github.com/Parker-Yang/srv-braveTroops
+module github.com/Evolt0/srv-braveTroops
 
 go 1.15
 
 require (
-	github.com/Parker-Yang/def-braveTroops v0.0.0-20210119022744-cb9d2e3b1476
-	github.com/Parker-Yang/fabric-sdk-yml v0.0.0-20201120094727-f5699f6ce6e3
+	github.com/Evolt0/def-braveTroops v0.0.1
+	github.com/Evolt0/fabric-sdk-yml v1.0.0
 	github.com/gin-gonic/gin v1.6.3
-	github.com/hyperledger/fabric-sdk-go v1.0.0-rc1
+	github.com/hyperledger/fabric-sdk-go v1.0.0-beta3
 	github.com/sirupsen/logrus v1.7.0
-	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
-
-// replace github.com/Parker-Yang/def-braveTroops => /Users/parker/Desktop/GoWorkspace/BraveTroops/def-braveTroops
+// replace github.com/Evolt0/def-braveTroops => /Users/parker/Desktop/GoWorkspace/BraveTroops/def-braveTroops

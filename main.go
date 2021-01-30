@@ -1,14 +1,13 @@
 package main
 
 import (
+	"github.com/Evolt0/srv-braveTroops/global"
+	"github.com/Evolt0/srv-braveTroops/routes"
+	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 	"os"
 	"os/signal"
 	"syscall"
-
-	"github.com/Parker-Yang/srv-braveTroops/global"
-	"github.com/Parker-Yang/srv-braveTroops/routes"
-	"github.com/gin-gonic/gin"
-	"github.com/sirupsen/logrus"
 )
 
 var monitoredSignals = []os.Signal{

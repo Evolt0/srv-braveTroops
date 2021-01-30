@@ -11,17 +11,16 @@ import (
 	"reflect"
 )
 
-//
-func Create(ctx *gin.Context) {
-	data := &proto.UserReq{}
-	err := ctx.ShouldBindJSON(data)
-	if err != nil {
+func List(ctx *gin.Context) {
+	data := &proto.BodyData{}
+	_ = ctx.Query("id")
+	/*if err != nil {
 		utils.FailedResp(ctx, status.BadRequest, nil)
 		return
-	}
+	}*/
 	logrus.Debugln(reflect.TypeOf(data))
 	controller := user.NewController(global.Conf.Client)
-	state, err := controller.Create(data)
+	state, err := controller.List(data)
 	if err != nil {
 		utils.UnWarpFailedResp(ctx, err)
 		return
