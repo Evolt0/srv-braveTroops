@@ -4,6 +4,8 @@ github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Evolt0/def-braveTroops v0.0.1 h1:ekurqMKGMyZ3zv9CH63hW+kYHVDqESO2AtWx1ppoz0Y=
 github.com/Evolt0/def-braveTroops v0.0.1/go.mod h1:9k87h7P11XVO76PpHzUdZnmZWQbLgapAXCxNAeq+Rbo=
+github.com/Evolt0/def-braveTroops v0.0.2-0.20210204055109-27b403d6ab4a h1:gVed/aw2K9m3IWOEw1jHwvOmeMtp+WTb0HQPCqD7CPw=
+github.com/Evolt0/def-braveTroops v0.0.2-0.20210204055109-27b403d6ab4a/go.mod h1:9k87h7P11XVO76PpHzUdZnmZWQbLgapAXCxNAeq+Rbo=
 github.com/Evolt0/fabric-sdk-yml v1.0.0 h1:+Z+kAxuBeAGgohaHqUo83C/vPUETtuz+7LzRsCf/0Oo=
 github.com/Evolt0/fabric-sdk-yml v1.0.0/go.mod h1:2kgLW3jFxn33uYXESWn/UgeNGXzaKArW8LieEJEGi+Y=
 github.com/GeertJohan/go.incremental v1.0.0/go.mod h1:6fAjUhbVuX1KcMD3c8TEgVUqmo4seqhv0i0kdATSkM0=

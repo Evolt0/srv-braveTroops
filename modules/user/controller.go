@@ -56,5 +56,21 @@ func (c Controller) ListLedgerByID(data *proto.BodyData) (interface{}, error) {
 }
 
 func (c Controller) List(data *proto.BodyData) (interface{}, error) {
-	return nil, nil
+	log.Println(data)
+	marshal, err := json.Marshal(data)
+	if err != nil {
+		return nil, err
+	}
+	response, err := c.baseClient.ChannelQuery(
+		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListUser, Args: [][]byte{marshal}},
+		channel.WithRetry(retry.DefaultChannelOpts))
+	if err != nil {
+		return nil, err
+	}
+	result := &proto.ListUser{}
+	err = epkg.UnwrapSucc(response.Payload, result)
+	if err != nil {
+		return nil, epkg.Wrapf(status.InternalServerError, "failed to unmarshal %v", err)
+	}
+	return result, nil
 }
