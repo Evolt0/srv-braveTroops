@@ -7,6 +7,6 @@ import (
 func Routes(ctx *gin.Engine) {
 	user := ctx.Group("/user")
 	user.POST("/", Create)
-	user.GET("/", List)
+	user.POST("/list", List)
 	user.POST("/listLedgerByID", ListLedgerByID)
 }

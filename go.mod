@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/Evolt0/def-braveTroops v0.0.2-0.20210204055109-27b403d6ab4a
-	github.com/Evolt0/fabric-sdk-yml v1.0.0
+	github.com/Evolt0/fabric-sdk-yml v1.0.1
 	github.com/gin-gonic/gin v1.6.3
 	github.com/hyperledger/fabric-sdk-go v1.0.0-beta3
 	github.com/sirupsen/logrus v1.7.0

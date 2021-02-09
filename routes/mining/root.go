@@ -9,7 +9,7 @@ func Routes(root *gin.Engine) {
 	mining := root.Group("/mining")
 	{
 		mining.POST("/pow", PoW)
-		mining.GET("/list", List)
-		mining.GET("/GetTarget", GetTarget)
+		mining.POST("/list", List)
+		mining.POST("/getTarget", GetTarget)
 	}
 }
