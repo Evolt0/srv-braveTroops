@@ -35,14 +35,9 @@ func (c Controller) PoW(data *proto.MiningReq) (interface{}, error) {
 	return response, nil
 }
 
-func (c Controller) List(data *proto.BodyData) (interface{}, error) {
-	log.Println(data)
-	marshal, err := json.Marshal(data)
-	if err != nil {
-		return nil, err
-	}
+func (c Controller) List() (interface{}, error) {
 	response, err := c.baseClient.ChannelQuery(
-		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListMining, Args: [][]byte{marshal}},
+		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListMining, Args: [][]byte{}},
 		channel.WithRetry(retry.DefaultChannelOpts))
 	if err != nil {
 		return nil, err
@@ -55,14 +50,9 @@ func (c Controller) List(data *proto.BodyData) (interface{}, error) {
 	return result, nil
 }
 
-func (c Controller) GetTarget(data *proto.BodyData) (interface{}, error) {
-	log.Println(data)
-	marshal, err := json.Marshal(data)
-	if err != nil {
-		return nil, err
-	}
+func (c Controller) GetTarget() (interface{}, error) {
 	response, err := c.baseClient.ChannelQuery(
-		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnGetTarget, Args: [][]byte{marshal}},
+		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnGetTarget, Args: [][]byte{}},
 		channel.WithRetry(retry.DefaultChannelOpts))
 	if err != nil {
 		return nil, err

@@ -11,7 +11,7 @@ import (
 	"reflect"
 )
 
-//
+// 创建用户
 func Create(ctx *gin.Context) {
 	data := &proto.UserReq{}
 	err := ctx.ShouldBindJSON(data)

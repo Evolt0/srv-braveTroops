@@ -36,14 +36,9 @@ func (c Controller) Transfer(data *proto.AmountsReq) (interface{}, error) {
 	return response, nil
 }
 
-func (c Controller) List(data *proto.BodyData) (interface{}, error) {
-	log.Println(data)
-	marshal, err := json.Marshal(data)
-	if err != nil {
-		return nil, err
-	}
+func (c Controller) List() (interface{}, error) {
 	response, err := c.baseClient.ChannelQuery(
-		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListLedger, Args: [][]byte{marshal}},
+		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListLedger, Args: [][]byte{}},
 		channel.WithRetry(retry.DefaultChannelOpts))
 	if err != nil {
 		return nil, err

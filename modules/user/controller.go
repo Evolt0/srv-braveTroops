@@ -55,14 +55,9 @@ func (c Controller) ListLedgerByID(data *proto.BodyData) (interface{}, error) {
 	return result, nil
 }
 
-func (c Controller) List(data *proto.BodyData) (interface{}, error) {
-	log.Println(data)
-	marshal, err := json.Marshal(data)
-	if err != nil {
-		return nil, err
-	}
+func (c Controller) List() (interface{}, error) {
 	response, err := c.baseClient.ChannelQuery(
-		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListUser, Args: [][]byte{marshal}},
+		channel.Request{ChaincodeID: c.baseClient.ChainCodeID, Fcn: prefix.FnListUser, Args: [][]byte{}},
 		channel.WithRetry(retry.DefaultChannelOpts))
 	if err != nil {
 		return nil, err

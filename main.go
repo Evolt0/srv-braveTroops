@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Evolt0/srv-braveTroops/global"
+	"github.com/Evolt0/srv-braveTroops/middlewares"
 	"github.com/Evolt0/srv-braveTroops/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -21,6 +22,7 @@ func main() {
 	logrus.Println(global.Conf.Client)
 	gin.SetMode(global.Conf.App.Mode)
 	engine := gin.Default()
+	engine.Use(middlewares.Cors())
 	routes.SetRoutes(engine)
 	go func() {
 		err := engine.Run(global.Conf.App.Port)

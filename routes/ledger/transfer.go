@@ -15,7 +15,7 @@ func Transfer(ctx *gin.Context) {
 	data := &proto.AmountsReq{}
 	err := ctx.ShouldBindJSON(data)
 	if err != nil {
-		utils.FailedResp(ctx, status.BadRequest, nil)
+		utils.FailedResp(ctx, status.BadRequest, err.Error())
 		return
 	}
 	logrus.Debugln(reflect.TypeOf(data))
