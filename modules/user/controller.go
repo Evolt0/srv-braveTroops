@@ -5,11 +5,13 @@ import (
 	"github.com/Evolt0/def-braveTroops/consts/status"
 	"github.com/Evolt0/def-braveTroops/proto"
 	"github.com/Evolt0/def-braveTroops/proto/epkg"
+	"github.com/Evolt0/def-braveTroops/proto/pkg/RSA"
 	"github.com/Evolt0/def-braveTroops/proto/prefix"
 	"github.com/Evolt0/fabric-sdk-yml/base"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/errors/retry"
 	"log"
+	"strings"
 )
 
 type Controller struct {
@@ -68,4 +70,15 @@ func (c Controller) List() (interface{}, error) {
 		return nil, epkg.Wrapf(status.InternalServerError, "failed to unmarshal %v", err)
 	}
 	return result, nil
+}
+
+func (c Controller) Gen() (*proto.KeyPair, error) {
+	private, public, err := RSA.GenRsaKey()
+	if err != nil {
+		return nil, epkg.Wrapf(status.InternalServerError, "failed to generate RSA key:%v", err)
+	}
+	return &proto.KeyPair{
+		Pri: strings.TrimSuffix(string(private), "\n"),
+		Pub: strings.TrimSuffix(string(public), "\n"),
+	}, nil
 }
